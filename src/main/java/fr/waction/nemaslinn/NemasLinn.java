@@ -1,6 +1,8 @@
 package fr.waction.nemaslinn;
 
 import com.mojang.logging.LogUtils;
+import fr.waction.nemaslinn.block.ModBlocks;
+import fr.waction.nemaslinn.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -20,6 +22,9 @@ public class NemasLinn
     public NemasLinn()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

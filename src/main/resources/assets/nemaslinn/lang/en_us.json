@@ -1,0 +1,14 @@
+{
+  "item.nemaslinn.titanium_ingot": "Titanium Ingot",
+  "item.nemaslinn.iridium_ingot": "Iridium Ingot",
+  "item.nemaslinn.platinium_ingot": "Platinium Ingot",
+
+  "block.nemaslinn.titanium_block": "Titanium Block",
+  "block.nemaslinn.iridium_block": "Iridium Block",
+  "block.nemaslinn.platinium_block": "Platinium Block",
+  "block.nemaslinn.titanium_ore": "Titanium Ore",
+  "block.nemaslinn.iridium_ore": "Iridium Ore",
+  "block.nemaslinn.platinium_ore": "Platinium Ore",
+
+  "itemGroup.nemaslinntab": "Nemas Linn"
+}
