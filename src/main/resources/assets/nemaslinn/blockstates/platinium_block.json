@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "models": "nemaslinn:block/platinium_block"}
+    "": { "model": "nemaslinn:block/platinium_block"}
   }
 }

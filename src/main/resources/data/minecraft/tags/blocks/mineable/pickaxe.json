@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "nemaslinn:titanium_ore",
+    "nemaslinn:titanium_block",
+    "nemaslinn:platinium_ore",
+    "nemaslinn:platinium_block",
+    "nemaslinn:iridium_ore",
+    "nemaslinn:iridium_block"
+  ]
+}

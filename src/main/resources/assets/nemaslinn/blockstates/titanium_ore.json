@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "models": "nemaslinn:block/titanium_ore"}
+    "": { "model": "nemaslinn:block/titanium_ore"}
   }
 }

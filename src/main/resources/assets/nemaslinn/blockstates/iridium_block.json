@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "models": "nemaslinn:block/iridium_block"
+      "model": "nemaslinn:block/iridium_block"
     }
   }
 }

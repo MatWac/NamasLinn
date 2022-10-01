@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "models": "nemaslinn:block/titanium_block"}
+    "": { "model": "nemaslinn:block/titanium_block"}
   }
 }
