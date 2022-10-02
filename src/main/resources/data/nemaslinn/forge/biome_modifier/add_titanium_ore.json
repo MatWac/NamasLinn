@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biome": "#minecraft:is_overworld",
+  "features": "nemaslinn:titanium_ore_placed",
+  "step": "underground_ores"
+}
