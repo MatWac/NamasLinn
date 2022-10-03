@@ -17,22 +17,28 @@ public class ModPlacedFeatures {
 
     public static final RegistryObject<PlacedFeature> TITANIUM_ORE_PLACED = PLACED_FEATURE.register("titanium_ore_placed",
         () -> new PlacedFeature(ModConfiguredFeatures.TITANIUM_ORE.getHolder().get(),
-                commonOrePlacement(5,
-                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
+                commonOrePlacement(5, //VeinsPerChucks
+                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-64), VerticalAnchor.aboveBottom(20)))));
 
+    public static final RegistryObject<PlacedFeature> PLATINIUM_ORE_PLACED = PLACED_FEATURE.register("platinium_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.PLATINIUM_ORE.getHolder().get(),
+                    rareOrePlacement(3,
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-64), VerticalAnchor.aboveBottom(10)))));
 
-    public static List<PlacementModifier> orePlacement(PlacementModifier modifier, PlacementModifier modifier2){
-        return List.of(modifier, InSquarePlacement.spread(), modifier2, BiomeFilter.biome());
+    public static final RegistryObject<PlacedFeature> IRIDIUM_ORE_PLACED = PLACED_FEATURE.register("iridium_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.IRIDIUM_ORE.getHolder().get(),
+                    rareOrePlacement(1,
+                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-64), VerticalAnchor.aboveBottom(5)))));
+
+    public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
+        return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());
     }
-
-    public static List<PlacementModifier> commonOrePlacement(int i,PlacementModifier modifier){
-        return orePlacement(CountPlacement.of(i), modifier);
+    public static List<PlacementModifier> commonOrePlacement(int p_195344_, PlacementModifier p_195345_) {
+        return orePlacement(CountPlacement.of(p_195344_), p_195345_);
     }
-
-    public static List<PlacementModifier> rareOrePlacement(int i,PlacementModifier modifier){
-        return orePlacement(RarityFilter.onAverageOnceEvery(i), modifier);
+    public static List<PlacementModifier> rareOrePlacement(int p_195350_, PlacementModifier p_195351_) {
+        return orePlacement(RarityFilter.onAverageOnceEvery(p_195350_), p_195351_);
     }
-
 
     public static void register(IEventBus eventBus) {
         PLACED_FEATURE.register(eventBus);

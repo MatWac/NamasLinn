@@ -12,6 +12,9 @@
   "block.nemaslinn.titanium_ore": "Titanium Ore",
   "block.nemaslinn.iridium_ore": "Iridium Ore",
   "block.nemaslinn.platinium_ore": "Platinium Ore",
+  "block.nemaslinn.deepslate_titanium_ore": "Deepslate Titanium Ore",
+  "block.nemaslinn.deepslate_iridium_ore": "Deepslate Iridium Ore",
+  "block.nemaslinn.deepslate_platinium_ore": "Deepslate Platinium Ore",
 
   "itemGroup.nemaslinntab": "Nemas Linn"
 }

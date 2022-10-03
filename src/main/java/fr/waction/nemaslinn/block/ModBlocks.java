@@ -28,6 +28,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> IRIDIUM_ORE = registrerBlock("iridium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
     public static final RegistryObject<Block> PLATINIUM_ORE = registrerBlock("platinium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
 
+    public static final RegistryObject<Block> DEEPSLATE_TITANIUM_ORE = registrerBlock("deepslate_titanium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(7f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
+    public static final RegistryObject<Block> DEEPSLATE_IRIDIUM_ORE = registrerBlock("deepslate_iridium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(7f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
+    public static final RegistryObject<Block> DEEPSLATE_PLATINIUM_ORE = registrerBlock("deepslate_platinium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(7f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
+
 
 
 

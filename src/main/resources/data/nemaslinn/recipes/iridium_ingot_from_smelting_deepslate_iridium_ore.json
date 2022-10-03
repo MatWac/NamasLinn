@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 1.2,
+  "group": "iridium_ingot",
+  "ingredient": {
+    "item": "nemaslinn:deepslate_iridium_ore"
+  },
+  "result": "nemaslinn:iridium_ingot"
+}

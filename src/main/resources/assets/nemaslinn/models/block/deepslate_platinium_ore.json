@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "nemaslinn:block/deepslate_platinium_ore"
+  }
+}

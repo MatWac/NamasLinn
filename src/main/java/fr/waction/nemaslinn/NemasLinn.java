@@ -27,6 +27,7 @@ public class NemasLinn
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
 

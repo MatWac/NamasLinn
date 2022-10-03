@@ -1,5 +1,9 @@
 {
+  "replace": false,
   "values": [
+    "nemaslinn:iridium_ore",
+    "nemaslinn:deepslate_iridium_ore",
+    "nemaslinn:iridium_block"
 
   ]
 }
