@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "nemaslinn:block/platinium_ore"
+    "all": "nemaslinn:block/platinum_block"
   }
 }

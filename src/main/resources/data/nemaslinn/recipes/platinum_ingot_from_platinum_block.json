@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "platinium_ingot",
+  "group": "platinum_ingot",
   "ingredients": [
     {
-      "item": "nemaslinn:platinium_block"
+      "item": "nemaslinn:platinum_block"
     }
   ],
   "result": {
     "count": 9,
-    "item": "nemaslinn:platinium_ingot"
+    "item": "nemaslinn:platinum_ingot"
   }
 }

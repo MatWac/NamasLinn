@@ -25,14 +25,14 @@ public class ModConfiguredFeatures {
     public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_IRIDIUM_ORES = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.IRIDIUM_ORE.get().defaultBlockState()),
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_IRIDIUM_ORE.get().defaultBlockState())));
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_PLATINIUM_ORES = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.PLATINIUM_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_PLATINIUM_ORE.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_PLATINUM_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.PLATINUM_ORE.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_PLATINUM_ORE.get().defaultBlockState())));
 
     public static final RegistryObject<ConfiguredFeature<?,?>> TITANIUM_ORE = CONFIGURED_FEATURES.register("titanium_ore",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_TITANIUM_ORES.get(), 4)));
-    public static final RegistryObject<ConfiguredFeature<?,?>> PLATINIUM_ORE = CONFIGURED_FEATURES.register("platinium_ore",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_PLATINIUM_ORES.get(), 2)));
+    public static final RegistryObject<ConfiguredFeature<?,?>> PLATINUM_ORE = CONFIGURED_FEATURES.register("platinum_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_PLATINUM_ORES.get(), 2)));
     public static final RegistryObject<ConfiguredFeature<?,?>> IRIDIUM_ORE = CONFIGURED_FEATURES.register("iridium_ore",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_IRIDIUM_ORES.get(), 1)));
 

@@ -18,17 +18,17 @@ public class ModPlacedFeatures {
     public static final RegistryObject<PlacedFeature> TITANIUM_ORE_PLACED = PLACED_FEATURE.register("titanium_ore_placed",
         () -> new PlacedFeature(ModConfiguredFeatures.TITANIUM_ORE.getHolder().get(),
                 commonOrePlacement(5, //VeinsPerChucks
-                        HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-64), VerticalAnchor.aboveBottom(20)))));
+                        HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(20)))));
 
-    public static final RegistryObject<PlacedFeature> PLATINIUM_ORE_PLACED = PLACED_FEATURE.register("platinium_ore_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.PLATINIUM_ORE.getHolder().get(),
-                    rareOrePlacement(3,
-                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-64), VerticalAnchor.aboveBottom(10)))));
+    public static final RegistryObject<PlacedFeature> PLATINUM_ORE_PLACED = PLACED_FEATURE.register("platinum_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.PLATINUM_ORE.getHolder().get(),
+                    commonOrePlacement(10,
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(10)))));
 
     public static final RegistryObject<PlacedFeature> IRIDIUM_ORE_PLACED = PLACED_FEATURE.register("iridium_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.IRIDIUM_ORE.getHolder().get(),
-                    rareOrePlacement(1,
-                            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-64), VerticalAnchor.aboveBottom(5)))));
+                    commonOrePlacement(10,
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(5)))));
 
     public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
         return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());

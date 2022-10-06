@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "nemaslinn:item/raw_platinium"
+    "layer0": "nemaslinn:item/raw_platinum"
   }
 }

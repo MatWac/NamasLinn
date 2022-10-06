@@ -22,15 +22,15 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> TITANIUM_BLOCK = registrerBlock("titanium_block", () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
     public static final RegistryObject<Block> IRIDIUM_BLOCK = registrerBlock("iridium_block", () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
-    public static final RegistryObject<Block> PLATINIUM_BLOCK = registrerBlock("platinium_block", () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
+    public static final RegistryObject<Block> PLATINUM_BLOCK = registrerBlock("platinum_block", () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(6f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
 
     public static final RegistryObject<Block> TITANIUM_ORE = registrerBlock("titanium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
     public static final RegistryObject<Block> IRIDIUM_ORE = registrerBlock("iridium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
-    public static final RegistryObject<Block> PLATINIUM_ORE = registrerBlock("platinium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
+    public static final RegistryObject<Block> PLATINUM_ORE = registrerBlock("platinum_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
 
     public static final RegistryObject<Block> DEEPSLATE_TITANIUM_ORE = registrerBlock("deepslate_titanium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(7f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
     public static final RegistryObject<Block> DEEPSLATE_IRIDIUM_ORE = registrerBlock("deepslate_iridium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(7f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
-    public static final RegistryObject<Block> DEEPSLATE_PLATINIUM_ORE = registrerBlock("deepslate_platinium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(7f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
+    public static final RegistryObject<Block> DEEPSLATE_PLATINUM_ORE = registrerBlock("deepslate_platinum_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(7f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
 
 
 

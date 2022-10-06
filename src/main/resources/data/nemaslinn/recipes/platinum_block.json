@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "nemaslinn:platinium_ingot"
+      "item": "nemaslinn:platinum_ingot"
     }
   },
   "pattern": [
@@ -11,6 +11,6 @@
     "###"
   ],
   "result": {
-    "item": "nemaslinn:platinium_block"
+    "item": "nemaslinn:platinum_block"
   }
 }

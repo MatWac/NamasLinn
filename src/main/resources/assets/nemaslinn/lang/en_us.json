@@ -1,20 +1,20 @@
 {
   "item.nemaslinn.titanium_ingot": "Titanium Ingot",
   "item.nemaslinn.iridium_ingot": "Iridium Ingot",
-  "item.nemaslinn.platinium_ingot": "Platinium Ingot",
+  "item.nemaslinn.platinum_ingot": "Platinum Ingot",
   "item.nemaslinn.raw_titanium": "Raw Titanium",
   "item.nemaslinn.raw_iridium": "Raw Iridium",
-  "item.nemaslinn.raw_platinium": "Raw Platinium",
+  "item.nemaslinn.raw_platinum": "Raw Platinum",
 
   "block.nemaslinn.titanium_block": "Block of Titanium",
   "block.nemaslinn.iridium_block": "Block of Iridium",
-  "block.nemaslinn.platinium_block": "Block of Platinium",
+  "block.nemaslinn.platinum_block": "Block of Platinum",
   "block.nemaslinn.titanium_ore": "Titanium Ore",
   "block.nemaslinn.iridium_ore": "Iridium Ore",
-  "block.nemaslinn.platinium_ore": "Platinium Ore",
+  "block.nemaslinn.platinum_ore": "Platinum Ore",
   "block.nemaslinn.deepslate_titanium_ore": "Deepslate Titanium Ore",
   "block.nemaslinn.deepslate_iridium_ore": "Deepslate Iridium Ore",
-  "block.nemaslinn.deepslate_platinium_ore": "Deepslate Platinium Ore",
+  "block.nemaslinn.deepslate_platinum_ore": "Deepslate Platinum Ore",
 
   "itemGroup.nemaslinntab": "Nemas Linn"
 }

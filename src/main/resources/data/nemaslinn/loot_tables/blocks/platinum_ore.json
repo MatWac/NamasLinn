@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "nemaslinn:platinium_ore"
+              "name": "nemaslinn:platinum_ore"
             },
             {
               "type": "minecraft:item",
@@ -38,7 +38,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "nemaslinn:raw_platinium"
+              "name": "nemaslinn:raw_platinum"
             }
           ]
         }
