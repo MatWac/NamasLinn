@@ -17,7 +17,7 @@ public class ModPlacedFeatures {
 
     public static final RegistryObject<PlacedFeature> OSMIUM_ORE_PLACED = PLACED_FEATURE.register("osmium_ore_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.OSMIUM_ORE.getHolder().get(),
-                    commonOrePlacement(5, //VeinsPerChucks
+                    commonOrePlacement(4, //VeinsPerChucks
                             HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(20)))));
 
     public static final RegistryObject<PlacedFeature> THORIUM_ORE_PLACED = PLACED_FEATURE.register("thorium_ore_placed",
