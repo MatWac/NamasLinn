@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 1.1,
+  "group": ":thorium_ingot",
+  "ingredient": {
+    "item": "nemaslinn:raw_thorium"
+  },
+  "result": "nemaslinn:thorium_ingot"
+}

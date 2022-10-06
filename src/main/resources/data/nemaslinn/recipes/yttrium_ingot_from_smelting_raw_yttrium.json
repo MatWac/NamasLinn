@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 1.2,
+  "group": "yttrium_ingot",
+  "ingredient": {
+    "item": "nemaslinn:raw_yttrium"
+  },
+  "result": "nemaslinn:yttrium_ingot"
+}

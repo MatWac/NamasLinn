@@ -19,22 +19,22 @@ public class ModConfiguredFeatures {
     public static final DeferredRegister<ConfiguredFeature<?,?>> CONFIGURED_FEATURES =
             DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, NemasLinn.MODID);
 
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_TITANIUM_ORES = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.TITANIUM_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_TITANIUM_ORE.get().defaultBlockState())));
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_IRIDIUM_ORES = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.IRIDIUM_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_IRIDIUM_ORE.get().defaultBlockState())));
-    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_PLATINUM_ORES = Suppliers.memoize(() -> List.of(
-            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.PLATINUM_ORE.get().defaultBlockState()),
-            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_PLATINUM_ORE.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_OSMIUM_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.OSMIUM_ORE.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_OSMIUM_ORE.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_YTTRIUM_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.YTTRIUM_ORE.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_YTTRIUM_ORE.get().defaultBlockState())));
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> OVERWORLD_THORIUM_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.THORIUM_ORE.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_THORIUM_ORE.get().defaultBlockState())));
 
-    public static final RegistryObject<ConfiguredFeature<?,?>> TITANIUM_ORE = CONFIGURED_FEATURES.register("titanium_ore",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_TITANIUM_ORES.get(), 4)));
-    public static final RegistryObject<ConfiguredFeature<?,?>> PLATINUM_ORE = CONFIGURED_FEATURES.register("platinum_ore",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_PLATINUM_ORES.get(), 2)));
-    public static final RegistryObject<ConfiguredFeature<?,?>> IRIDIUM_ORE = CONFIGURED_FEATURES.register("iridium_ore",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_IRIDIUM_ORES.get(), 1)));
+    public static final RegistryObject<ConfiguredFeature<?,?>> OSMIUM_ORE = CONFIGURED_FEATURES.register("osmium_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_OSMIUM_ORES.get(), 4)));
+    public static final RegistryObject<ConfiguredFeature<?,?>> THORIUM_ORE = CONFIGURED_FEATURES.register("thorium_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_THORIUM_ORES.get(), 3)));
+    public static final RegistryObject<ConfiguredFeature<?,?>> YTTRIUM_ORE = CONFIGURED_FEATURES.register("yttrium_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_YTTRIUM_ORES.get(), 2)));
 
 
 

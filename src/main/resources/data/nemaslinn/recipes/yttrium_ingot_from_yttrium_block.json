@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "yttrium_ingot",
+  "ingredients": [
+    {
+      "item": "nemaslinn:yttrium_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "nemaslinn:yttrium_ingot"
+  }
+}

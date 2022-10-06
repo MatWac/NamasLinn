@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 1.2,
+  "group": "yttrium_ingot",
+  "ingredient": {
+    "item": "nemaslinn:yttrium_ore"
+  },
+  "result": "nemaslinn:yttrium_ingot"
+}

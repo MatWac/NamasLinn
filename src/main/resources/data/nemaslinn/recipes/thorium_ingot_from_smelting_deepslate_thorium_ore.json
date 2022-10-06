@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 1.1,
+  "group": "thorium_ingot",
+  "ingredient": {
+    "item": "nemaslinn:deepslate_thorium_ore"
+  },
+  "result": "nemaslinn:thorium_ingot"
+}

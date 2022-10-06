@@ -8,7 +8,7 @@ public class ModCreativeModTab {
     public static final CreativeModeTab NEMASLINN_TAB = new CreativeModeTab("nemaslinntab") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ModItems.IRIDIUM_INGOT.get());
+            return new ItemStack(ModItems.YTTRIUM_INGOT.get());
         }
     };
 }

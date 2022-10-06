@@ -1,9 +1,9 @@
 {
   "replace": false,
   "values": [
-    "nemaslinn:iridium_ore",
-    "nemaslinn:deepslate_iridium_ore",
-    "nemaslinn:iridium_block"
+    "nemaslinn:yttrium_ore",
+    "nemaslinn:deepslate_yttrium_ore",
+    "nemaslinn:yttrium_block"
 
   ]
 }

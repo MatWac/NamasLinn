@@ -15,19 +15,19 @@ public class ModPlacedFeatures {
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURE =
             DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, NemasLinn.MODID);
 
-    public static final RegistryObject<PlacedFeature> TITANIUM_ORE_PLACED = PLACED_FEATURE.register("titanium_ore_placed",
-        () -> new PlacedFeature(ModConfiguredFeatures.TITANIUM_ORE.getHolder().get(),
-                commonOrePlacement(5, //VeinsPerChucks
-                        HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(20)))));
+    public static final RegistryObject<PlacedFeature> OSMIUM_ORE_PLACED = PLACED_FEATURE.register("osmium_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.OSMIUM_ORE.getHolder().get(),
+                    commonOrePlacement(5, //VeinsPerChucks
+                            HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(20)))));
 
-    public static final RegistryObject<PlacedFeature> PLATINUM_ORE_PLACED = PLACED_FEATURE.register("platinum_ore_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.PLATINUM_ORE.getHolder().get(),
-                    commonOrePlacement(10,
+    public static final RegistryObject<PlacedFeature> THORIUM_ORE_PLACED = PLACED_FEATURE.register("thorium_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.THORIUM_ORE.getHolder().get(),
+                    commonOrePlacement(3,
                             HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(10)))));
 
-    public static final RegistryObject<PlacedFeature> IRIDIUM_ORE_PLACED = PLACED_FEATURE.register("iridium_ore_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.IRIDIUM_ORE.getHolder().get(),
-                    commonOrePlacement(10,
+    public static final RegistryObject<PlacedFeature> YTTRIUM_ORE_PLACED = PLACED_FEATURE.register("yttrium_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.YTTRIUM_ORE.getHolder().get(),
+                    commonOrePlacement(1,
                             HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(5)))));
 
     public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
