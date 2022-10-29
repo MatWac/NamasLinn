@@ -2,9 +2,14 @@ package fr.waction.nemaslinn;
 
 import com.mojang.logging.LogUtils;
 import fr.waction.nemaslinn.block.ModBlocks;
+import fr.waction.nemaslinn.block.entity.ModBlockEntities;
 import fr.waction.nemaslinn.item.ModItems;
+import fr.waction.nemaslinn.screen.ModMenuTypes;
+import fr.waction.nemaslinn.screen.RawOreFoundryScreen;
 import fr.waction.nemaslinn.world.feature.ModConfiguredFeatures;
 import fr.waction.nemaslinn.world.feature.ModPlacedFeatures;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -34,6 +39,10 @@ public class NemasLinn
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
+
+        ModBlockEntities.register(modEventBus);
+
+        ModMenuTypes.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
@@ -49,6 +58,8 @@ public class NemasLinn
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+
+            MenuScreens.register(ModMenuTypes.RAW_ORE_FOUNDRY_MENU.get(), RawOreFoundryScreen::new);
 
         }
     }

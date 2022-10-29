@@ -6,6 +6,10 @@
   "item.nemaslinn.raw_yttrium": "Raw Yttrium",
   "item.nemaslinn.raw_thorium": "Raw Thorium",
 
+  "item.nemaslinn.osmium_pickaxe": "Osmium Pickaxe",
+  "item.nemaslinn.yttrium_pickaxe": "Yttrium Pickaxe",
+  "item.nemaslinn.thorium_pickaxe": "Thorium Pickaxe",
+
   "block.nemaslinn.osmium_block": "Block of Osmium",
   "block.nemaslinn.yttrium_block": "Block of Yttrium",
   "block.nemaslinn.thorium_block": "Block of Thorium",

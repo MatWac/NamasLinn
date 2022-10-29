@@ -32,7 +32,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEEPSLATE_YTTRIUM_ORE = registrerBlock("deepslate_yttrium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(7f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
     public static final RegistryObject<Block> DEEPSLATE_THORIUM_ORE = registrerBlock("deepslate_thorium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(7f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
 
-
+    public static final RegistryObject<Block> RAW_ORE_FOUNDRY = registrerBlock("raw_ore_foundry", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(7f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
 
 
     private static <T extends Block>RegistryObject<T> registrerBlock(String name, Supplier<T> block, CreativeModeTab tab){
