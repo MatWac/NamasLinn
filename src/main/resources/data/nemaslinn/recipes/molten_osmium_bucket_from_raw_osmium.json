@@ -1,0 +1,15 @@
+{
+  "type": "nemaslinn:raw_ore_melting",
+  "ingredients":[
+    {
+      "item": "nemaslinn:raw_osmium"
+    }
+  ],
+  "output": {
+    "fluid": {
+      "FluidName": "nemaslinn:molten_osmium",
+      "Amount": 0.1
+    }
+  }
+
+}

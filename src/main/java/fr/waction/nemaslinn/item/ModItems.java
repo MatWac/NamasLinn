@@ -1,6 +1,7 @@
 package fr.waction.nemaslinn.item;
 
 import fr.waction.nemaslinn.NemasLinn;
+import fr.waction.nemaslinn.fluid.ModFluids;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.material.Fluid;
@@ -30,9 +31,12 @@ public class ModItems {
     public static final RegistryObject<Item> THORIUM_PICKAXE  = ITEMS.register("thorium_pickaxe", () -> new PickaxeItem(Tiers.YTTRIUM, 2, -2.8f, new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
 
 
-    public static final RegistryObject<Item> MOLTEN_OSMIUM_BUCKET  = ITEMS.register("molten_osmium_bucket", () -> new BucketItem(new LavaFluid.Source(),new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
-    public static final RegistryObject<Item> MOLTEN_YTTRIUM_BUCKET  = ITEMS.register("molten_yttrium_bucket", () -> new BucketItem(new LavaFluid.Source(),new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
-    public static final RegistryObject<Item> MOLTEN_THORIUM_BUCKET  = ITEMS.register("molten_thorium_bucket", () -> new BucketItem(new LavaFluid.Source(),new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
+    public static final RegistryObject<Item> MOLTEN_OSMIUM_BUCKET  = ITEMS.register("molten_osmium_bucket",
+            () -> new BucketItem(ModFluids.MOLTEN_OSMIUM, new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB).craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final RegistryObject<Item> MOLTEN_YTTRIUM_BUCKET  = ITEMS.register("molten_yttrium_bucket",
+            () -> new BucketItem(ModFluids.MOLTEN_YTTRIUM, new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB).craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final RegistryObject<Item> MOLTEN_THORIUM_BUCKET  = ITEMS.register("molten_thorium_bucket",
+            () -> new BucketItem(ModFluids.MOLTEN_THORIUM, new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB).craftRemainder(Items.BUCKET).stacksTo(1)));
 
     public static void register(IEventBus eventBus){
 

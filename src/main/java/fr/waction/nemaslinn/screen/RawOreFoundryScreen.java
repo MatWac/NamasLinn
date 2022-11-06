@@ -3,16 +3,21 @@ package fr.waction.nemaslinn.screen;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import fr.waction.nemaslinn.NemasLinn;
+import fr.waction.nemaslinn.screen.renderer.FluidTankRenderer;
+import fr.waction.nemaslinn.util.MouseUtil;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.TooltipFlag;
+
+import java.util.Optional;
 
 public class RawOreFoundryScreen extends AbstractContainerScreen<RawOreFoundryMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(NemasLinn.MODID, "textures/gui/raw_ore_foundry.png");
+    private FluidTankRenderer renderer;
 
     public RawOreFoundryScreen(RawOreFoundryMenu menu, Inventory inventory, Component component) {
         super(menu, inventory, component);
@@ -21,8 +26,27 @@ public class RawOreFoundryScreen extends AbstractContainerScreen<RawOreFoundryMe
     @Override
     protected void init() {
         super.init();
+        assignFluidRenderer();
     }
 
+    private void assignFluidRenderer() {
+        renderer = new FluidTankRenderer(4000, true, 16, 53);
+    }
+
+    @Override
+    protected void renderLabels(PoseStack pPoseStack, int pMouseX, int pMouseY) {
+        int x = (width - imageWidth) / 2;
+        int y = (height - imageHeight) / 2;
+
+        renderFluidAreaTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+    }
+
+    private void renderFluidAreaTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if(isMouseAboveArea(pMouseX, pMouseY, x, y, 78, 16)) {
+            renderTooltip(pPoseStack, renderer.getTooltip(menu.getFluidStack(), TooltipFlag.Default.NORMAL),
+                    Optional.empty(), pMouseX - x, pMouseY - y);
+        }
+    }
     @Override
     protected void renderBg(PoseStack pPoseStack, float pPartialTick, int pMouseX, int pMouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
@@ -33,13 +57,24 @@ public class RawOreFoundryScreen extends AbstractContainerScreen<RawOreFoundryMe
 
         this.blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
 
+        renderFuelFlame(pPoseStack, x, y);
         renderProgressArrow(pPoseStack, x, y);
+        renderer.render(pPoseStack, x+78, y+16, menu.getFluidStack());
 
     }
 
+
     private void renderProgressArrow(PoseStack pPoseStack, int x, int y) {
-        if(menu.isCrafting()) {
-            blit(pPoseStack, x + 62, y + 17, 176, 0, 15, menu.getScaledProgress());
+        if(menu.isProgress()) {
+            int p = menu.getScaledProgress();
+            blit(pPoseStack, x + 62, y + 16, 176, 14, p+1 , 16);
+        }
+    }
+
+    private void renderFuelFlame(PoseStack pPoseStack, int x, int y) {
+        if(menu.isBurning()) {
+            int f = menu.getScaledFuel();
+            blit(pPoseStack, x + 44, y + 37 + 12 - f, 176, 12-f,14 , f+1);
         }
     }
 
@@ -48,5 +83,9 @@ public class RawOreFoundryScreen extends AbstractContainerScreen<RawOreFoundryMe
         renderBackground(pPoseStack);
         super.render(pPoseStack, mouseX, mouseY, delta);
         renderTooltip(pPoseStack, mouseX, mouseY);
+    }
+
+    private boolean isMouseAboveArea(int pMouseX, int pMouseY, int x, int y, int offsetX, int offsetY) {
+        return MouseUtil.isMouseOver(pMouseX, pMouseY, x + offsetX, y + offsetY, renderer.getWidth(), renderer.getHeight());
     }
 }

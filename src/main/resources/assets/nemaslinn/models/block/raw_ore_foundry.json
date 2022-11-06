@@ -3,6 +3,7 @@
   "textures": {
     "front": "nemaslinn:block/raw_ore_foundry_front",
     "side": "nemaslinn:block/raw_ore_foundry_side",
-    "top": "nemaslinn:block/raw_ore_foundry_top"
+    "top": "nemaslinn:block/raw_ore_foundry_top",
+    "bottom": "nemaslinn:block/raw_ore_foundry_bottom"
   }
 }

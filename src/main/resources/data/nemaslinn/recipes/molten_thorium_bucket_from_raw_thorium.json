@@ -1,0 +1,12 @@
+{
+  "type": "nemaslinn:raw_ore_melting",
+  "ingredients":[
+    {
+      "item": "nemaslinn:raw_thorium",
+    }
+  ],
+  "output": {
+    "item": "nemaslinn:molten_thorium_bucket"
+  }
+
+}

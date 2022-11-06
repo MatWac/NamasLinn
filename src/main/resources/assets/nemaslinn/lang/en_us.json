@@ -5,6 +5,9 @@
   "item.nemaslinn.raw_osmium": "Raw Osmium",
   "item.nemaslinn.raw_yttrium": "Raw Yttrium",
   "item.nemaslinn.raw_thorium": "Raw Thorium",
+  "item.nemaslinn.molten_osmium_bucket": "Molten Osmium Bucket",
+  "item.nemaslinn.molten_yttrium_bucket": "Molten Yttrium Bucket",
+  "item.nemaslinn.molten_thorium_bucket": "Molten Thorium Bucket",
 
   "item.nemaslinn.osmium_pickaxe": "Osmium Pickaxe",
   "item.nemaslinn.yttrium_pickaxe": "Yttrium Pickaxe",
@@ -19,6 +22,14 @@
   "block.nemaslinn.deepslate_osmium_ore": "Deepslate Osmium Ore",
   "block.nemaslinn.deepslate_yttrium_ore": "Deepslate Yttrium Ore",
   "block.nemaslinn.deepslate_thorium_ore": "Deepslate Thorium Ore",
+  "block.nemaslinn.raw_ore_foundry": "Raw Ore Foundry",
 
-  "itemGroup.nemaslinntab": "Nemas Linn"
+  "fluid_type.nemaslinn.molten_osmium_fluid": "Molten Osmium",
+  "fluid_type.nemaslinn.molten_thorium_fluid": "Molten Thorium",
+  "fluid_type.nemaslinn.molten_yttrium_fluid": "Molten Yttrium",
+
+  "itemGroup.nemaslinntab": "Nemas Linn",
+
+  "nemaslinn.tooltip.liquid.amount.with.capacity": "%s / %s mB",
+  "nemaslinn.tooltip.liquid.amount": "%s mB"
 }

@@ -3,7 +3,11 @@ package fr.waction.nemaslinn;
 import com.mojang.logging.LogUtils;
 import fr.waction.nemaslinn.block.ModBlocks;
 import fr.waction.nemaslinn.block.entity.ModBlockEntities;
+import fr.waction.nemaslinn.fluid.ModFluidTypes;
+import fr.waction.nemaslinn.fluid.ModFluids;
 import fr.waction.nemaslinn.item.ModItems;
+import fr.waction.nemaslinn.networking.ModMessages;
+import fr.waction.nemaslinn.recipe.ModRecipes;
 import fr.waction.nemaslinn.screen.ModMenuTypes;
 import fr.waction.nemaslinn.screen.RawOreFoundryScreen;
 import fr.waction.nemaslinn.world.feature.ModConfiguredFeatures;
@@ -36,17 +40,24 @@ public class NemasLinn
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
 
+        ModFluids.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+
+        ModRecipes.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
-
-        ModBlockEntities.register(modEventBus);
-
-        ModMenuTypes.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        event.enqueueWork(() -> {
+            ModMessages.register();
+        });
 
     }
 

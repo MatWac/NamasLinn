@@ -3,7 +3,6 @@ package fr.waction.nemaslinn.screen;
 import fr.waction.nemaslinn.block.ModBlocks;
 import fr.waction.nemaslinn.block.entity.RawOreFoundryBlockEntity;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
@@ -11,17 +10,18 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.items.SlotItemHandler;
-import org.jetbrains.annotations.Nullable;
 
 public class RawOreFoundryMenu extends AbstractContainerMenu {
 
     public final RawOreFoundryBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
+    private FluidStack fluidStack;
 
     public RawOreFoundryMenu(int id, Inventory inv, FriendlyByteBuf extraData){
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
     }
     public RawOreFoundryMenu(int id, Inventory inv, BlockEntity entity, ContainerData data){
         super(ModMenuTypes.RAW_ORE_FOUNDRY_MENU.get(), id);
@@ -29,31 +29,55 @@ public class RawOreFoundryMenu extends AbstractContainerMenu {
         blockEntity = (RawOreFoundryBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
+        this.fluidStack = blockEntity.getFluidStack();
 
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 42, 52));
-            this.addSlot(new SlotItemHandler(handler, 1, 42, 16));
-            this.addSlot(new SlotItemHandler(handler, 2, 108, 16));
-            this.addSlot(new SlotItemHandler(handler, 3, 108, 52));
+            this.addSlot(new SlotItemHandler(handler, 0, 43, 53));
+            this.addSlot(new SlotItemHandler(handler, 1, 43, 17));
+            this.addSlot(new SlotItemHandler(handler, 2, 109, 17));
+            this.addSlot(new SlotItemHandler(handler, 3, 109, 53));
         });
 
         addDataSlots(data);
 
     }
+    public boolean isBurning() {
+        return data.get(2) > 0;
+    }
 
-    public boolean isCrafting() {
+    public boolean isProgress() {
         return data.get(0) > 0;
+    }
+
+    public void setFluid(FluidStack fluidStack) {
+        this.fluidStack = fluidStack;
+    }
+
+    public FluidStack getFluidStack() {
+        return fluidStack;
+    }
+
+    public RawOreFoundryBlockEntity getBlockEntity() {
+        return this.blockEntity;
     }
 
     public int getScaledProgress() {
         int progress = this.data.get(0);
         int maxProgress = this.data.get(1);  // Max Progress
-        int progressArrowSize = 26; // This is the height in pixels of your arrow
+        int progressArrowSize = 14; // This is the height in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+    }
+
+    public int getScaledFuel() {
+        int fuel = this.data.get(2);
+        int maxFuel = this.data.get(3);  // Max Progress
+        int fuelArrowSize = 14; // This is the height in pixels of your arrow
+
+        return maxFuel != 0 && fuel != 0 ? fuel * fuelArrowSize / maxFuel : 0;
     }
 
 
@@ -114,14 +138,14 @@ public class RawOreFoundryMenu extends AbstractContainerMenu {
     private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 86 + i * 18));
+                this.addSlot(new Slot(playerInventory, l + i * 9 + 7, 8 + l * 18, 84 + i * 18));
             }
         }
     }
 
     private void addPlayerHotbar(Inventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 144));
+            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
     }
 }
