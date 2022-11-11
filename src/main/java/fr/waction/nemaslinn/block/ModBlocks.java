@@ -35,7 +35,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEEPSLATE_YTTRIUM_ORE = registerBlock("deepslate_yttrium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(7f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
     public static final RegistryObject<Block> DEEPSLATE_THORIUM_ORE = registerBlock("deepslate_thorium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(7f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
 
-    public static final RegistryObject<Block> RAW_ORE_FOUNDRY = registerBlock("raw_ore_foundry", () -> new RawOreFoundryBlock(BlockBehaviour.Properties.of(Material.STONE).strength(7f).requiresCorrectToolForDrops()), ModCreativeModTab.NEMASLINN_TAB);
+    public static final RegistryObject<Block> RAW_ORE_FOUNDRY = registerBlock("raw_ore_foundry",
+            () -> new RawOreFoundryBlock(BlockBehaviour.Properties.of(Material.STONE).strength(7f).requiresCorrectToolForDrops().lightLevel(state -> state.getValue(RawOreFoundryBlock.LIT) ? 15 : 0)), ModCreativeModTab.NEMASLINN_TAB);
 
     public static final RegistryObject<LiquidBlock> MOLTEN_OSMIUM_BLOCK = BLOCKS.register("molten_osmium_block",() -> new LiquidBlock(ModFluids.MOLTEN_OSMIUM, BlockBehaviour.Properties.copy(Blocks.LAVA)));
     public static final RegistryObject<LiquidBlock> MOLTEN_YTTRIUM_BLOCK = BLOCKS.register("molten_yttrium_block",() -> new LiquidBlock(ModFluids.MOLTEN_YTTRIUM, BlockBehaviour.Properties.copy(Blocks.LAVA)));

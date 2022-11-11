@@ -1,5 +1,6 @@
 {
   "variants": {
-    "": { "model": "nemaslinn:block/raw_ore_foundry"}
+    "lit=true": { "model": "nemaslinn:block/raw_ore_foundry_on"},
+    "lit=false": { "model": "nemaslinn:block/raw_ore_foundry_off"}
   }
 }

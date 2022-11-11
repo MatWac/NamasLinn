@@ -1,0 +1,9 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "front": "nemaslinn:block/raw_ore_foundry_front_on",
+    "side": "nemaslinn:block/raw_ore_foundry_side",
+    "top": "nemaslinn:block/raw_ore_foundry_top_on",
+    "bottom": "nemaslinn:block/raw_ore_foundry_bottom"
+  }
+}

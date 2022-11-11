@@ -1,11 +1,10 @@
 package fr.waction.nemaslinn.block.entity;
 
-import fr.waction.nemaslinn.fluid.ModFluidTypes;
+import fr.waction.nemaslinn.block.RawOreFoundryBlock;
 import fr.waction.nemaslinn.fluid.ModFluids;
 import fr.waction.nemaslinn.item.ModItems;
 import fr.waction.nemaslinn.networking.ModMessages;
 import fr.waction.nemaslinn.networking.packet.FluidSyncS2CPacket;
-import fr.waction.nemaslinn.recipe.RawOreFoundryRecipe;
 import fr.waction.nemaslinn.screen.RawOreFoundryMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -21,7 +20,6 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.AbstractCauldronBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
@@ -193,38 +191,51 @@ public class RawOreFoundryBlockEntity extends BlockEntity implements MenuProvide
 
     public static void tick(Level level, BlockPos pos, BlockState state, RawOreFoundryBlockEntity pEntity) {
 
+        boolean lit = pEntity.isLit();
+        boolean changed = false;
+
         if (level.isClientSide()) {
             return;
         }
 
         if(canConsumeFuel(pEntity)){
             consumeFuel(pEntity);
-            setChanged(level, pos, state);
+            changed = true;
         }
 
         if(hasMoltenOre(pEntity)){
 
                 pEntity.fuel--;
                 pEntity.progress++;
-                setChanged(level, pos, state);
+                changed = true;
 
                 if (pEntity.progress >= pEntity.maxProgress) {
                     meltItem(pEntity);
-                    setChanged(level, pos, state);
+                    changed = true;
                 }
         } else if(pEntity.fuel >= 0){
 
             pEntity.fuel--;
             pEntity.resetProgress();
-            setChanged(level, pos, state);
+            changed = true;
 
         }else {
             pEntity.resetProgress();
-            setChanged(level, pos, state);
+            changed = true;
         }
 
         if(hasEnoughFluid(pEntity)){
             fillBucket(pEntity);
+        }
+
+        if (lit != pEntity.isLit()) {
+            state = state.setValue(RawOreFoundryBlock.LIT, Boolean.valueOf(pEntity.isLit()));
+            level.setBlock(pos, state, 3);
+            changed = true;
+        }
+
+        if (changed) {
+            setChanged(level, pos, state);
         }
     }
     private static void meltItem(RawOreFoundryBlockEntity entity) {
@@ -251,13 +262,13 @@ public class RawOreFoundryBlockEntity extends BlockEntity implements MenuProvide
 
         entity.itemHandler.extractItem(2,1,false);
         entity.FLUID_TANK.drain(1000,IFluidHandler.FluidAction.EXECUTE);
-        System.out.println(getOutPutItem(entity));
-        entity.itemHandler.setStackInSlot(3, new ItemStack(getOutPutItem(entity)));
+        entity.itemHandler.setStackInSlot(3, new ItemStack(entity.FLUID_TANK.getFluid().getRawFluid().getBucket()));
     }
 
     private static boolean canConsumeFuel(RawOreFoundryBlockEntity entity) {
 
-        return entity.fuel <= 0 && isRightFluid(entity) && isFuel(entity.itemHandler.getStackInSlot(0)) && !entity.itemHandler.getStackInSlot(1).isEmpty();
+        boolean isFull = entity.FLUID_TANK.getFluidAmount() >= entity.FLUID_TANK.getCapacity();
+        return !isFull && entity.fuel <= 0 && isRightFluid(entity) && isFuel(entity.itemHandler.getStackInSlot(0)) && !entity.itemHandler.getStackInSlot(1).isEmpty();
     }
 
     private static boolean hasEnoughFluid(RawOreFoundryBlockEntity entity) {
@@ -278,8 +289,9 @@ public class RawOreFoundryBlockEntity extends BlockEntity implements MenuProvide
             inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
 
+        boolean isFull = entity.FLUID_TANK.getFluidAmount() >= entity.FLUID_TANK.getCapacity();
         boolean hasFuel = entity.fuel > 0;
-        return hasFuel && isRightFluid(entity) && hasRecipe(inventory.getItem(1).getItem());
+        return hasFuel && !isFull && isRightFluid(entity) && hasRecipe(inventory.getItem(1).getItem());
     }
 
     private static boolean isRightFluid(RawOreFoundryBlockEntity entity) {
@@ -304,24 +316,6 @@ public class RawOreFoundryBlockEntity extends BlockEntity implements MenuProvide
 
         return item.equals(ModItems.RAW_OSMIUM.get()) || item.equals(ModItems.RAW_THORIUM.get()) || item.equals(ModItems.RAW_YTTRIUM.get());
     }
-
-    private static Item getOutPutItem(RawOreFoundryBlockEntity entity){
-
-        System.out.println(entity.getFluidStack().getFluid());
-        System.out.println(entity.getFluidStack());
-        System.out.println(entity.getFluidStack().equals(new FluidStack(ModFluids.MOLTEN_THORIUM.get().getFlowing(), 1)));
-
-       /* if(entity.getFluidStack().getFluid().getFluidType().equals(ModFluidTypes.MOLTEN_OSMIUM_FLUID_TYPE.get())){
-            return ModItems.MOLTEN_OSMIUM_BUCKET.get();
-        } else if (entity.getFluidStack().getFluid().getFluidType().equals(ModFluidTypes.MOLTEN_YTTRIUM_FLUID_TYPE.get())){
-            return ModItems.MOLTEN_YTTRIUM_BUCKET.get();
-        }else if (entity.getFluidStack().getFluid().getFluidType().equals(ModFluidTypes.MOLTEN_THORIUM_FLUID_TYPE.get())){
-            return ModItems.MOLTEN_THORIUM_BUCKET.get();
-        }else return null;*/
-
-        return null;
-    }
-
     private static Fluid getFluidFromItem(Item item){
 
         if(item.equals(ModItems.RAW_YTTRIUM.get())){
@@ -332,5 +326,10 @@ public class RawOreFoundryBlockEntity extends BlockEntity implements MenuProvide
             return ModFluids.MOLTEN_THORIUM.get();
         }else return null;
     }
+
+    private boolean isLit() {
+        return this.FLUID_TANK.getFluidAmount() > 0;
+    }
+
 
 }
