@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:smooth_stone"
+    },
+    "S": {
+      "item": "minecraft:sand"
+    },
+    "P": {
+      "item": "minecraft:wooden_sword"
+    }
+  },
+  "pattern": [
+    "#S#",
+    "SPS",
+    "#S#"
+  ],
+  "result": {
+    "item": "nemaslinn:sword_mold"
+  }
+}

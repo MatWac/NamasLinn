@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:cobblestone"
+    },
+    "T": {
+      "item": "nemaslinn:osmium_ingot"
+    },
+    "B": {
+      "item": "minecraft:bucket"
+    }
+  },
+  "pattern": [
+    "#T#",
+    "TBT",
+    "#T#"
+  ],
+  "result": {
+    "item": "nemaslinn:raw_ore_foundry"
+  }
+}

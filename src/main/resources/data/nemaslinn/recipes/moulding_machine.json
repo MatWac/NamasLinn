@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:cobblestone"
+    },
+    "T": {
+      "item": "nemaslinn:thorium_ingot"
+    },
+    "S": {
+      "item": "minecraft:smooth_stone"
+    }
+  },
+  "pattern": [
+    "#S#",
+    "T T",
+    "#T#"
+  ],
+  "result": {
+    "item": "nemaslinn:moulding_machine"
+  }
+}

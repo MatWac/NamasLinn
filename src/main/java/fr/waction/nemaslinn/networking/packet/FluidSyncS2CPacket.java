@@ -1,6 +1,8 @@
 package fr.waction.nemaslinn.networking.packet;
 
+import fr.waction.nemaslinn.block.entity.MouldingMachineBlockEntity;
 import fr.waction.nemaslinn.block.entity.RawOreFoundryBlockEntity;
+import fr.waction.nemaslinn.screen.MoultingMachineMenu;
 import fr.waction.nemaslinn.screen.RawOreFoundryMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
@@ -36,6 +38,15 @@ public class FluidSyncS2CPacket {
                 blockEntity.setFluid(this.fluidStack);
 
                 if(Minecraft.getInstance().player.containerMenu instanceof RawOreFoundryMenu menu &&
+                        menu.getBlockEntity().getBlockPos().equals(pos)) {
+                    menu.setFluid(this.fluidStack);
+                }
+            }
+
+            if(Minecraft.getInstance().level.getBlockEntity(pos) instanceof MouldingMachineBlockEntity blockEntity) {
+                blockEntity.setFluid(this.fluidStack);
+
+                if(Minecraft.getInstance().player.containerMenu instanceof MoultingMachineMenu menu &&
                         menu.getBlockEntity().getBlockPos().equals(pos)) {
                     menu.setFluid(this.fluidStack);
                 }

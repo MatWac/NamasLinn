@@ -1,0 +1,9 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "front": "nemaslinn:block/moulding_machine_side",
+    "side": "nemaslinn:block/moulding_machine_side",
+    "top": "nemaslinn:block/moulding_machine_top_on",
+    "bottom": "nemaslinn:block/raw_ore_foundry_bottom"
+  }
+}

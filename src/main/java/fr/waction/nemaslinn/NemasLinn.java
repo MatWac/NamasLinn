@@ -9,6 +9,7 @@ import fr.waction.nemaslinn.item.ModItems;
 import fr.waction.nemaslinn.networking.ModMessages;
 import fr.waction.nemaslinn.recipe.ModRecipes;
 import fr.waction.nemaslinn.screen.ModMenuTypes;
+import fr.waction.nemaslinn.screen.MoultingMachineScreen;
 import fr.waction.nemaslinn.screen.RawOreFoundryScreen;
 import fr.waction.nemaslinn.world.feature.ModConfiguredFeatures;
 import fr.waction.nemaslinn.world.feature.ModPlacedFeatures;
@@ -46,7 +47,7 @@ public class NemasLinn
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
 
-        ModRecipes.register(modEventBus);
+        //ModRecipes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -71,6 +72,7 @@ public class NemasLinn
         {
 
             MenuScreens.register(ModMenuTypes.RAW_ORE_FOUNDRY_MENU.get(), RawOreFoundryScreen::new);
+            MenuScreens.register(ModMenuTypes.MOULTING_MACHINE_MENU.get(), MoultingMachineScreen::new);
 
         }
     }

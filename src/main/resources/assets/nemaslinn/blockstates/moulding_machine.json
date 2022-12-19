@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "lit=true": { "model": "nemaslinn:block/moulding_machine_on"},
+    "lit=false": { "model": "nemaslinn:block/moulding_machine_off"}
+  }
+}

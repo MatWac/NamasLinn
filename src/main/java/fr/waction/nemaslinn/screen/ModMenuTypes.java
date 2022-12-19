@@ -20,6 +20,9 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<RawOreFoundryMenu>> RAW_ORE_FOUNDRY_MENU =
             registerMenuType(RawOreFoundryMenu::new, "raw_ore_foundry_menu");
 
+    public static final RegistryObject<MenuType<MoultingMachineMenu>> MOULTING_MACHINE_MENU =
+            registerMenuType(MoultingMachineMenu::new, "moulting_machine_menu");
+
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory, String name) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));

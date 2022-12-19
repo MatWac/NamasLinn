@@ -17,6 +17,11 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(RawOreFoundryBlockEntity::new,
                             ModBlocks.RAW_ORE_FOUNDRY.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<MouldingMachineBlockEntity>> MOULDING_MACHINE =
+            BLOCK_ENTITIES.register("moulding_machine", () ->
+                    BlockEntityType.Builder.of(MouldingMachineBlockEntity::new,
+                            ModBlocks.MOULDING_MACHINE.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }
