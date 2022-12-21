@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:stick"
+  },
+  "base": {
+    "item": "nemaslinn:osmium_pickaxe_head"
+  },
+  "result": {
+    "item": "nemaslinn:osmium_pickaxe"
+  }
+}

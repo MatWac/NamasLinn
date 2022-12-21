@@ -72,7 +72,7 @@ public class ModItems {
         public static final Tier THORIUM = new ForgeTier(
                 3,
                 1861,
-                9.0F,
+                10.0F,
                 4.0F,
                 15,
                 null,
@@ -81,7 +81,7 @@ public class ModItems {
         public static final Tier YTTRIUM = new ForgeTier(
                 4,
                 3261,
-                11.0F,
+                20.0F,
                 5.0F,
                 20,
                 null,

@@ -7,14 +7,12 @@ import fr.waction.nemaslinn.fluid.ModFluidTypes;
 import fr.waction.nemaslinn.fluid.ModFluids;
 import fr.waction.nemaslinn.item.ModItems;
 import fr.waction.nemaslinn.networking.ModMessages;
-import fr.waction.nemaslinn.recipe.ModRecipes;
 import fr.waction.nemaslinn.screen.ModMenuTypes;
 import fr.waction.nemaslinn.screen.MoultingMachineScreen;
 import fr.waction.nemaslinn.screen.RawOreFoundryScreen;
 import fr.waction.nemaslinn.world.feature.ModConfiguredFeatures;
 import fr.waction.nemaslinn.world.feature.ModPlacedFeatures;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -46,8 +44,6 @@ public class NemasLinn
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
-
-        //ModRecipes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

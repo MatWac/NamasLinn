@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:stick"
+  },
+  "base": {
+    "item": "nemaslinn:yttrium_pickaxe_head"
+  },
+  "result": {
+    "item": "nemaslinn:yttrium_pickaxe"
+  }
+}

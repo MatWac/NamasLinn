@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:stick"
+  },
+  "base": {
+    "item": "nemaslinn:osmium_sword_blade"
+  },
+  "result": {
+    "item": "nemaslinn:osmium_sword"
+  }
+}
