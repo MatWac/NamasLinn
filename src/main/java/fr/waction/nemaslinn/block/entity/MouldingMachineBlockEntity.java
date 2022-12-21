@@ -273,7 +273,7 @@ public class MouldingMachineBlockEntity extends BlockEntity implements MenuProvi
 
     private static void mold(MouldingMachineBlockEntity entity, Fluid fluid) {
 
-        entity.FLUID_TANK.drain(1000, IFluidHandler.FluidAction.EXECUTE);
+        entity.FLUID_TANK.drain(2000, IFluidHandler.FluidAction.EXECUTE);
         entity.itemHandler.setStackInSlot(2, new ItemStack(getItemFromFluid(fluid, entity.itemHandler.getStackInSlot(1).getItem())));
     }
 

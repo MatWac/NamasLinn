@@ -213,6 +213,7 @@ public class RawOreFoundryBlockEntity extends BlockEntity implements MenuProvide
                     meltItem(pEntity);
                     changed = true;
                 }
+
         } else if(pEntity.fuel >= 0){
 
             pEntity.fuel--;
@@ -240,10 +241,11 @@ public class RawOreFoundryBlockEntity extends BlockEntity implements MenuProvide
     }
     private static void meltItem(RawOreFoundryBlockEntity entity) {
 
-        FluidStack stack = new FluidStack(Objects.requireNonNull(getFluidFromItem(entity.itemHandler.getStackInSlot(1).getItem())), 200);
+        FluidStack stack = getFluidFromItem(entity.itemHandler.getStackInSlot(1).getItem());
         entity.itemHandler.extractItem(1, 1, false);
-        entity.FLUID_TANK.fill(stack,IFluidHandler.FluidAction.EXECUTE);
+        entity.FLUID_TANK.fill(stack, IFluidHandler.FluidAction.EXECUTE);
         entity.resetProgress();
+
     }
 
     private static void consumeFuel(RawOreFoundryBlockEntity entity) {
@@ -297,10 +299,10 @@ public class RawOreFoundryBlockEntity extends BlockEntity implements MenuProvide
     private static boolean isRightFluid(RawOreFoundryBlockEntity entity) {
 
 
-        if(entity.FLUID_TANK.isEmpty()){
+        if(entity.FLUID_TANK.isEmpty() || entity.itemHandler.getStackInSlot(1).isEmpty()){
             return true;
         }else {
-            return entity.FLUID_TANK.getFluid().getFluid().equals(getFluidFromItem(entity.itemHandler.getStackInSlot(1).getItem()));
+            return entity.FLUID_TANK.getFluid().getFluid().equals(Objects.requireNonNull(getFluidFromItem(entity.itemHandler.getStackInSlot(1).getItem())).getFluid());
         }
     }
 
@@ -316,17 +318,16 @@ public class RawOreFoundryBlockEntity extends BlockEntity implements MenuProvide
 
         return item.equals(ModItems.RAW_OSMIUM.get()) || item.equals(ModItems.RAW_THORIUM.get()) || item.equals(ModItems.RAW_YTTRIUM.get());
     }
-    private static Fluid getFluidFromItem(Item item){
+    private static FluidStack getFluidFromItem(Item item){
 
-        if(item.equals(ModItems.RAW_YTTRIUM.get())){
-            return ModFluids.MOLTEN_YTTRIUM.get();
-        } else if (item.equals(ModItems.RAW_OSMIUM.get())){
-            return ModFluids.MOLTEN_OSMIUM.get();
-        }else if (item.equals(ModItems.RAW_THORIUM.get())){
-            return ModFluids.MOLTEN_THORIUM.get();
+        if(item.equals(ModItems.RAW_OSMIUM.get())){
+            return new FluidStack(ModFluids.MOLTEN_OSMIUM.get(), 200);
+        } else if (item.equals(ModItems.RAW_THORIUM.get())){
+            return new FluidStack(ModFluids.MOLTEN_THORIUM.get(), 400);
+        }else if (item.equals(ModItems.RAW_YTTRIUM.get())){
+            return new FluidStack(ModFluids.MOLTEN_YTTRIUM.get(), 500);
         }else return null;
     }
-
     private boolean isLit() {
         return this.FLUID_TANK.getFluidAmount() > 0;
     }
