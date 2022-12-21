@@ -264,7 +264,19 @@ public class MouldingMachineBlockEntity extends BlockEntity implements MenuProvi
             inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
 
-        return hasMold(inventory) && canInsertItemIntoOutputSlot(inventory) && entity.FLUID_TANK.getFluidAmount() >= 1000;
+        return hasMold(inventory) && canInsertItemIntoOutputSlot(inventory) && hasEnoughtFluid(entity);
+    }
+
+    private static boolean hasEnoughtFluid(MouldingMachineBlockEntity entity){
+         if(entity.itemHandler.getStackInSlot(1).getItem().equals(ModItems.PICKAXE_MOLD.get())){
+             if(entity.FLUID_TANK.getFluidAmount() >= 3000){
+                 return true;
+             }else return false;
+         }else if(entity.itemHandler.getStackInSlot(1).getItem().equals(ModItems.SWORD_MOLD.get())){
+             if(entity.FLUID_TANK.getFluidAmount() >= 2000){
+                 return true;
+             }else return false;
+        }else return false;
     }
 
     private void resetProgress() {
@@ -273,7 +285,11 @@ public class MouldingMachineBlockEntity extends BlockEntity implements MenuProvi
 
     private static void mold(MouldingMachineBlockEntity entity, Fluid fluid) {
 
-        entity.FLUID_TANK.drain(2000, IFluidHandler.FluidAction.EXECUTE);
+        if(entity.itemHandler.getStackInSlot(1).getItem().equals(ModItems.PICKAXE_MOLD.get())){
+            entity.FLUID_TANK.drain(3000, IFluidHandler.FluidAction.EXECUTE);
+        }else if (entity.itemHandler.getStackInSlot(1).getItem().equals(ModItems.SWORD_MOLD.get())){
+            entity.FLUID_TANK.drain(2000, IFluidHandler.FluidAction.EXECUTE);
+        }else return;
         entity.itemHandler.setStackInSlot(2, new ItemStack(getItemFromFluid(fluid, entity.itemHandler.getStackInSlot(1).getItem())));
     }
 
@@ -304,19 +320,19 @@ public class MouldingMachineBlockEntity extends BlockEntity implements MenuProvi
 
         if (item.equals(ModItems.PICKAXE_MOLD.get())) {
             if (fluid.equals(ModFluids.MOLTEN_THORIUM.get())) {
-                return ModItems.THORIUM_PICKAXE.get();
+                return ModItems.THORIUM_PICKAXE_HEAD.get();
             }else if (fluid.equals(ModFluids.MOLTEN_YTTRIUM.get())) {
-                return ModItems.YTTRIUM_PICKAXE.get();
+                return ModItems.YTTRIUM_PICKAXE_HEAD.get();
             }else if (fluid.equals(ModFluids.MOLTEN_OSMIUM.get())) {
-                return ModItems.OSMIUM_PICKAXE.get();
+                return ModItems.OSMIUM_PICKAXE_HEAD.get();
             }else return null;
         } else if (item.equals(ModItems.SWORD_MOLD.get())) {
             if (fluid.equals(ModFluids.MOLTEN_THORIUM.get())) {
-                return ModItems.THORIUM_SWORD.get();
+                return ModItems.THORIUM_SWORD_BLADE.get();
             }else if (fluid.equals(ModFluids.MOLTEN_YTTRIUM.get())) {
-                return ModItems.YTTRIUM_SWORD.get();
+                return ModItems.YTTRIUM_SWORD_BLADE.get();
             }else if (fluid.equals(ModFluids.MOLTEN_OSMIUM.get())) {
-                return ModItems.OSMIUM_SWORD.get();
+                return ModItems.OSMIUM_SWORD_BLADE.get();
             }else return null;
         } else return null;
     }

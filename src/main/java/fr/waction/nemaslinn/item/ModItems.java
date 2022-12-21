@@ -31,14 +31,22 @@ public class ModItems {
     public static final RegistryObject<Item> THORIUM_PICKAXE  = ITEMS.register("thorium_pickaxe", () -> new PickaxeItem(Tiers.THORIUM, 1, -2.8f, new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
     public static final RegistryObject<Item> YTTRIUM_PICKAXE  = ITEMS.register("yttrium_pickaxe", () -> new PickaxeItem(Tiers.YTTRIUM, 0, -2.8f, new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
 
+    public static final RegistryObject<Item> OSMIUM_PICKAXE_HEAD = ITEMS.register("osmium_pickaxe_head", () -> new Item(new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
+    public static final RegistryObject<Item> THORIUM_PICKAXE_HEAD  = ITEMS.register("thorium_pickaxe_head", () -> new Item(new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
+    public static final RegistryObject<Item> YTTRIUM_PICKAXE_HEAD  = ITEMS.register("yttrium_pickaxe_head", () -> new Item(new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
 
     public static final RegistryObject<Item> OSMIUM_SWORD = ITEMS.register("osmium_sword", () -> new SwordItem(Tiers.OSMIUM, 4, -2.4f ,new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
     public static final RegistryObject<Item> THORIUM_SWORD = ITEMS.register("thorium_sword", () -> new SwordItem(Tiers.THORIUM, 4, -2.4f ,new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
     public static final RegistryObject<Item> YTTRIUM_SWORD = ITEMS.register("yttrium_sword", () -> new SwordItem(Tiers.YTTRIUM, 4, -2.4f ,new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
 
+    public static final RegistryObject<Item> OSMIUM_SWORD_BLADE = ITEMS.register("osmium_sword_blade", () -> new Item(new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
+    public static final RegistryObject<Item> THORIUM_SWORD_BLADE = ITEMS.register("thorium_sword_blade", () -> new Item(new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
+    public static final RegistryObject<Item> YTTRIUM_SWORD_BLADE = ITEMS.register("yttrium_sword_blade", () -> new Item(new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
+
 
     public static final RegistryObject<Item> PICKAXE_MOLD = ITEMS.register("pickaxe_mold", () -> new Item(new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
     public static final RegistryObject<Item> SWORD_MOLD = ITEMS.register("sword_mold", () -> new Item(new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
+
     public static final RegistryObject<Item> MOLTEN_OSMIUM_BUCKET  = ITEMS.register("molten_osmium_bucket",
             () -> new BucketItem(ModFluids.MOLTEN_OSMIUM, new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB).craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final RegistryObject<Item> MOLTEN_THORIUM_BUCKET  = ITEMS.register("molten_thorium_bucket",
