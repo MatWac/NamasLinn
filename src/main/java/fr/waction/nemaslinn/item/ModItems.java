@@ -44,8 +44,8 @@ public class ModItems {
     public static final RegistryObject<Item> YTTRIUM_SWORD_BLADE = ITEMS.register("yttrium_sword_blade", () -> new Item(new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
 
 
-    public static final RegistryObject<Item> PICKAXE_MOLD = ITEMS.register("pickaxe_mold", () -> new Item(new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
-    public static final RegistryObject<Item> SWORD_MOLD = ITEMS.register("sword_mold", () -> new Item(new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB)));
+    public static final RegistryObject<Item> PICKAXE_MOLD = ITEMS.register("pickaxe_mold", () -> new Item(new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB).stacksTo(1)));
+    public static final RegistryObject<Item> SWORD_MOLD = ITEMS.register("sword_mold", () -> new Item(new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB).stacksTo(1)));
 
     public static final RegistryObject<Item> MOLTEN_OSMIUM_BUCKET  = ITEMS.register("molten_osmium_bucket",
             () -> new BucketItem(ModFluids.MOLTEN_OSMIUM, new Item.Properties().tab(ModCreativeModTab.NEMASLINN_TAB).craftRemainder(Items.BUCKET).stacksTo(1)));
@@ -71,7 +71,7 @@ public class ModItems {
 
         public static final Tier THORIUM = new ForgeTier(
                 3,
-                1861,
+                1863,
                 10.0F,
                 4.0F,
                 15,
@@ -80,7 +80,7 @@ public class ModItems {
 
         public static final Tier YTTRIUM = new ForgeTier(
                 4,
-                3261,
+                3269,
                 20.0F,
                 5.0F,
                 20,
